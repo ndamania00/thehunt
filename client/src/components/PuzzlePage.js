@@ -11,23 +11,23 @@ function PuzzlePage() {
         fetchItems();
     }, []);
 
-    const [files, setFiles] = useState([]);
+    const [file, setFile] = useState([]);
 
     const fetchItems = async () => {
         let data = await fetch('/api/getpuzzlefiles');
         let files = await data.json();
-        console.log(files);
-        setFiles(files);
+        const temp = files[0].puzzle_url;
+        setFile(temp);
+        console.log(file);
+
     }
 
     return (
         <Jumbotron fluid>
             <Container>
                 <h1>Fluid jumbotron</h1>
-                <Image src="/Users/nirmitd/git/thehunt/media/riddle1.png" fluid />
+                <Image src={`/media/${file}`} fluid />
                 <p>
-                    This is a modified jumbotron that occupies the entire horizontal space of
-                    its parent.
                 </p>
             </Container>
         </Jumbotron>

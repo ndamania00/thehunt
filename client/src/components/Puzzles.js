@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import puzzlepeice from './puzzlepeice.png';
 import CardColumns from 'react-bootstrap/CardColumns';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +23,7 @@ function Puzzles() {
 
         let data2 = await fetch('/api/getpuzzlecards')
         let pcs = await data2.json();
-        console.log(pcs);
+        console.log(pcs);   
         setPuzzleCards(pcs);
     }
 
@@ -32,7 +31,7 @@ function Puzzles() {
         <CardColumns>
             {puzzlecards.map(card => (
                 <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={puzzlepeice} />
+                    <Card.Img variant="top" src="/media/puzzlepeice.png" />
                     <Card.Body>
                         <Card.Title>{card.puzzle_title}</Card.Title>
                         <Card.Text>{card.puzzle_description}</Card.Text>
