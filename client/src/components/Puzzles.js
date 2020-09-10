@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
+import puzzlepeice from './puzzlepeice.png';
+import CardColumns from 'react-bootstrap/CardColumns';
+import { Link } from 'react-router-dom';
 
 function Puzzles() {
 
@@ -12,31 +14,35 @@ function Puzzles() {
     }, []);
 
     const [people, setPeople] = useState([]);
+    const [puzzlecards, setPuzzleCards] = useState([]);
 
     const fetchItems = async () => {
         let data = await fetch('/api/getpeople');
         let ppl = await data.json();
         console.log(ppl);
         setPeople(ppl);
+
+        let data2 = await fetch('/api/getpuzzlecards')
+        let pcs = await data2.json();
+        console.log(pcs);
+        setPuzzleCards(pcs);
     }
 
     return (
-        <div>
-            {people.map(person => (
-                <div>{person.first_name}</div>
+        <CardColumns>
+            {puzzlecards.map(card => (
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={puzzlepeice} />
+                    <Card.Body>
+                        <Card.Title>{card.puzzle_title}</Card.Title>
+                        <Card.Text>{card.puzzle_description}</Card.Text>
+                        <Link to={`/puzzle/${card.puzzle_id}`}>
+                            <Button component={Puzzles} variant="primary">Select</Button>
+                        </Link>
+                    </Card.Body>
+                </Card>
             ))}
-            <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
-                <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                    <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
-                    </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
-                </Card.Body>
-            </Card>
-        </div>
+        </CardColumns>
     )
 
 }

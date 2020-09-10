@@ -23,4 +23,22 @@ app.get('/api/getpeople', async (req, res) => {
     });
 });
 
+app.get('/api/getpuzzlecards', async (req, res) => {
+    let sql = 'SELECT * FROM puzzleCard';
+    let query = index.db.query(sql, (err, results) => {
+        if(err) throw err;
+        console.log(results);
+        res.send(results);
+    });
+});
+
+app.get('/api/getpuzzlefiles', async (req, res) => {
+    let sql = 'SELECT * FROM puzzleFile';
+    let query = index.db.query(sql, (err, results) => {
+        if(err) throw err;
+        console.log(results);
+        res.send(results);
+    });
+});
+
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
