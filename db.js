@@ -41,4 +41,4 @@ app.get('/api/getpuzzlefiles', async (req, res) => {
     });
 });
 
-app.listen(port, () => console.log(`Example app listening at https://scavengerhunt-io.herokuapp.com/:${port}`))
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
