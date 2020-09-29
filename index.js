@@ -6,7 +6,7 @@ const db = mysql.createConnection({
     port     : 3306,
     user     : 'bc8fcb9011c3db',
     password : 'dcff15f6!',
-    database : 'thehuntdb'
+    database : 'heroku_9445cbb39f698e9'
 });
 
 module.exports.db = db;
