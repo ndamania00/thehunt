@@ -2,10 +2,10 @@ const mysql = require('mysql');
 
 // Create connection
 const db = mysql.createConnection({
-    host     : 'localhost',
+    host     : 'us-cdbr-east-02.cleardb.com',
     port     : 3306,
-    user     : 'root',
-    password : 'NirmitD1!',
+    user     : 'bc8fcb9011c3db',
+    password : 'dcff15f6!',
     database : 'thehuntdb'
 });
 
