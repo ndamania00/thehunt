@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://scavengerhunt-io.herokuapp.com/:4000",
+  "proxy": "https://scavengerhunt-io.herokuapp.com/:80",
   "eslintConfig": {
     "extends": "react-app"
   },
