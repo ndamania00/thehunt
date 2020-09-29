@@ -5,7 +5,7 @@
   "main": "db.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "server": "nodemon db.js",
+    "server": "node db.js",
     "client": "npm start --prefix client",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
