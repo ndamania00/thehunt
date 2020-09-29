@@ -8,6 +8,8 @@ import PuzzlePage from './components/PuzzlePage.js'
 
 function App() {
 
+  
+
   return (
     <Router>
       <div>

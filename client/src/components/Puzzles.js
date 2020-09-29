@@ -21,7 +21,7 @@ function Puzzles() {
         console.log(ppl);
         setPeople(ppl);
 
-        let data2 = await fetch('/api/getpuzzlecards')
+        let data2 = await fetch('/api/getpuzzlecards');
         let pcs = await data2.json();
         console.log(pcs);   
         setPuzzleCards(pcs);

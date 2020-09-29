@@ -25,9 +25,10 @@ function PuzzlePage() {
     return (
         <Jumbotron fluid>
             <Container>
-                <h1>Fluid jumbotron</h1>
-                <Image src={`/media/${file}`} fluid />
+                <h1></h1>
+                <Image src={`/media/${file}`} fluid/>
                 <p>
+
                 </p>
             </Container>
         </Jumbotron>
