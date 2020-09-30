@@ -4,7 +4,7 @@ const express = require('express');
 
 const router = express.Router();
 const app = express();
-const port = 80;
+const port = process.env.PORT || 5000;;
 
 // Connect
 index.db.connect((err) => {
